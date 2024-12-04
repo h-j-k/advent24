@@ -1,6 +1,6 @@
 name = "Advent24"
 uuid = "27a3ec55-3373-42db-af05-a0f2ddc68a5a"
-authors = ["H-J-K <han.junkwang@gmail.com>"]
+authors = ["H-J-K"]
 version = "0.1.0"
 
 [deps]

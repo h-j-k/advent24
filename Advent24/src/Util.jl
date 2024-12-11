@@ -1,0 +1,1 @@
+readgrid(input::String) = stack(map(collect, readlines(input)))

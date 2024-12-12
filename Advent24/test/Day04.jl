@@ -4,4 +4,5 @@
     input = readgrid("../input/Day04.txt")
     output = parse.(Int, readlines("../output/Day04.txt"))
     @test part1(input) == output[1]
+    @test part2(input) == output[2]
 end

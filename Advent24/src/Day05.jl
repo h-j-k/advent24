@@ -9,3 +9,12 @@ function part1(input)
     rulegroups = mergewith(union, map(rule -> let (k, v) = split(rule, "|"); Dict(k => Set([v])); end, rules)...)
     filter(iscorrect(rulegroups), map(update -> split(update, ","), updates)) |> middlesum
 end
+
+function part2(input)
+    (rules, updates) = partitionby(input, r -> r == "")
+    rulegroups = mergewith(union, map(rule -> let (k, v) = split(rule, "|"); Dict(k => Set([v])); end, rules)...)
+    map(updates -> 
+        let x = trunc(Int, (length(updates) - 1) / 2); filter(page -> count(v -> v in get(rulegroups, page, Set()), updates) == x, updates) end, 
+        filter(!iscorrect(rulegroups), map(update -> split(update, ","), updates))
+    ) |> middlesum
+end
